@@ -154,14 +154,14 @@
   // Anti Link
   if (db.data.chats[m.chat].antilink) {
   if (budy.match(`chat.whatsapp.com`)) {
-  reply(`*ANTI LINK*\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
-  if (!isBotAdmins) return reply(`Ehh bot gak admin T_T`)
+  reply(`*ANTI LINK*\n\nYou are detected to send a group link, sorry you will be kicked !`)
+  if (!isBotAdmins) return reply(`Ehh bot not an admin T_T`)
   let gclink = (`https://chat.whatsapp.com/`+await chika.groupInviteCode(m.chat))
   let isLinkThisGc = new RegExp(gclink, 'i')
   let isgclink = isLinkThisGc.test(m.text)
-  if (isgclink) return reply(`Ehh maaf gak jadi, karena kamu ngirim link group ini`)
-  if (isAdmins) return reply(`Ehh maaf kamu admin`)
-  if (isCreator) return reply(`Ehh maaf kamu owner bot ku`)
+  if (isgclink) return reply(`Ehh sorry not so, because you sent this group link`)
+  if (isAdmins) return reply(`Ehh sorry you admin`)
+  if (isCreator) return reply(`Ehh sorry you're my owner`)
   chika.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   }
   }
@@ -198,9 +198,9 @@
   kuis = true
   jawaban = tebaklagu[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await chika.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `🎮 Tebak Lagu 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ownername, m)
+  await chika.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess the Song' }, type: 1 }], `🎮 Guess the Song 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, ownername, m)
   delete tebaklagu[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
 
   // Kuis Math
@@ -208,9 +208,9 @@
   kuis = true
   jawaban = kuismath[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await reply(`🎮 Kuis Matematika  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math mode`)
+  await reply(`🎮 Math Quiz  🎮\n\nCorrect Answer 🎉\n\nWant to play again? send ${prefix}math mode`)
   delete kuismath[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
 
   // Tebak Gambar
@@ -218,9 +218,9 @@
   kuis = true
   jawaban = tebakgambar[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await chika.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ownername, m)
+  await chika.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess the Picture' }, type: 1 }], `🎮 Guess the Picture 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, ownername, m)
   delete tebakgambar[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
 
   // Tebak Kata
@@ -228,9 +228,9 @@
   kuis = true
   jawaban = tebakkata[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await chika.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `🎮 Tebak Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ownername, m)
+  await chika.sendButtonText(m.chat, [{ buttonId: 'guess Words', buttonText: { displayText: 'Guess the Word' }, type: 1 }], `🎮 Guess the Word 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, ownername, m)
   delete tebakkata[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
 
   // Cak Lontong
@@ -239,10 +239,10 @@
   jawaban = caklontong[m.sender.split('@')[0]]
   deskripsi = caklontong_desk[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await chika.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, ownername, m)
+  await chika.sendButtonText(m.chat, [{ buttonId: 'guess rice cakes', buttonText: { displayText: 'Guess The Rice cakes' }, type: 1 }], `🎮 Guess Rice cakes 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant to play again? press the button below`, ownername, m)
   delete caklontong[m.sender.split('@')[0]]
   delete caklontong_desk[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
 
   // Tebak Kalimat
@@ -250,18 +250,18 @@
   kuis = true
   jawaban = tebakkalimat[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await chika.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ownername, m)
+  await chika.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess the Sentence' }, type: 1 }], `🎮 Guess the Sentence 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, ownername, m)
   delete tebakkalimat[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
 
   if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
   kuis = true
   jawaban = tebaklirik[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await chika.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ownername, m)
+  await chika.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess the Lyrics' }, type: 1 }], `🎮 Guess the Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, ownername, m)
   delete tebaklirik[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
 
   // Tebak Tebakan
@@ -269,9 +269,9 @@
   kuis = true
   jawaban = tebaktebakan[m.sender.split('@')[0]]
   if (budy.toLowerCase() == jawaban) {
-  await chika.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ownername, m)
+  await chika.sendButtonText(m.chat, [{ buttonId: 'guess Jigsaw', buttonText: { displayText: 'Guess the Jigsaw' }, type: 1 }], `🎮 Guess the Jigsaw 🎮\n\nCorrect Answer 🎉\n\nWant to play again? press the button below`, ownername, m)
   delete tebaktebakan[m.sender.split('@')[0]]
-  } else reply('*Jawaban Salah!*')
+  } else reply('*Wrong Answer!*')
   }
         
   //TicTacToe
@@ -290,10 +290,10 @@
   }
   if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
   reply({
-  '-3': 'Game telah berakhir',
+  '-3': 'The game is over',
   '-2': 'Invalid',
-  '-1': 'Posisi Invalid',
-  0: 'Posisi Invalid',
+  '-1': 'Invalid Position',
+  0: 'Invalid Position',
   }[ok])
   return !0
   }
@@ -325,11 +325,11 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-${isWin ? `@${winner.split('@')[0]} Menang!` : isTie ? `Game berakhir` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+${isWin ? `@${winner.split('@')[0]} Win!` : isTie ? `Game end` : `Turn ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
-Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
+Type *skip* to surrender and admit defeat`
   if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
   room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
   if (room.x !== room.o) await chika.sendText(room.x, str, m, { mentions: parseMention(str) } )
@@ -347,7 +347,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
   let tie = false
   if (m.sender == roof.p2 && /^(acc(ept)?|terima|gas|oke?|tolak|gamau|nanti|ga(k.)?bisa|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
   if (/^(tolak|gamau|nanti|n|ga(k.)?bisa)/i.test(m.text)) {
-  chika.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} menolak suit, suit dibatalkan`, m)
+  chika.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rejecting suit, suit cancelled`, m)
   delete this.suit[roof.id]
   return !0
   }
@@ -355,20 +355,20 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
   roof.asal = m.chat
   clearTimeout(roof.waktu)
   // delete roof[roof.id].waktu
-  chika.sendText(m.chat, `Suit telah dikirimkan ke chat
+  chika.sendText(m.chat, `Suit has been sent to chat
 
 @${roof.p.split`@`[0]} dan 
 @${roof.p2.split`@`[0]}
 
-Silahkan pilih suit di chat masing"
-klik https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-  if (!roof.pilih) chika.sendText(roof.p, `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️`, m)
-  if (!roof.pilih2) chika.sendText(roof.p2, `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️`, m)
+Please select suit in each chat"
+click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
+  if (!roof.pilih) chika.sendText(roof.p, `Please select \n\nStone🗿\nPaper📄\nScissor✂️`, m)
+  if (!roof.pilih2) chika.sendText(roof.p2, `Please select \n\nStone🗿\nPaper📄\nScissor✂️`, m)
   roof.waktu_milih = setTimeout(() => {
-  if (!roof.pilih && !roof.pilih2) chika.sendText(m.chat, `Kedua pemain tidak niat main,\nSuit dibatalkan`)
+  if (!roof.pilih && !roof.pilih2) chika.sendText(m.chat, `Both players have no intention of playing,\nSuit cancelled`)
   else if (!roof.pilih || !roof.pilih2) {
   win = !roof.pilih ? roof.p2 : roof.p
-  chika.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} tidak memilih suit, game berakhir`, m)
+  chika.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} do not choose a suit, game end`, m)
   }
   delete this.suit[roof.id]
   return !0
@@ -376,21 +376,21 @@ klik https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] }
   }
   let jwb = m.sender == roof.p
   let jwb2 = m.sender == roof.p2
-  let g = /gunting/i
-  let b = /batu/i
-  let k = /kertas/i
-  let reg = /^(gunting|batu|kertas)/i
+  let g = /scissor/i
+  let b = /stone/i
+  let k = /paper/i
+  let reg = /^(scissor|stone|paper)/i
   if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
   roof.pilih = reg.exec(m.text.toLowerCase())[0]
   roof.text = m.text
-  reply(`Kamu telah memilih ${m.text} ${!roof.pilih2 ? `\n\nMenunggu lawan memilih` : ''}`)
-  if (!roof.pilih2) chika.sendText(roof.p2, '_Lawan sudah memilih_\nSekarang giliran kamu', 0)
+  reply(`You've chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting for the opponent to choose` : ''}`)
+  if (!roof.pilih2) chika.sendText(roof.p2, '_The opponent has already chosen_\nNow its your turn.', 0)
   }
   if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
   roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
   roof.text2 = m.text
-  reply(`Kamu telah memilih ${m.text} ${!roof.pilih ? `\n\nMenunggu lawan memilih` : ''}`)
-  if (!roof.pilih) chika.sendText(roof.p, '_Lawan sudah memilih_\nSekarang giliran kamu', 0)
+  reply(`You've chosen ${m.text} ${!roof.pilih ? `\n\nWaiting for the opponent to choose` : ''}`)
+  if (!roof.pilih) chika.sendText(roof.p, '_The opponent has already chosen_\nNow its your turn.', 0)
   }
   let stage = roof.pilih
   let stage2 = roof.pilih2
@@ -403,10 +403,10 @@ klik https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] }
   else if (k.test(stage) && b.test(stage2)) win = roof.p
   else if (k.test(stage) && g.test(stage2)) win = roof.p2
   else if (stage == stage2) tie = true
-  chika.sendText(roof.asal, `_*Hasil Suit*_${tie ? '\nSERI' : ''}
+  chika.sendText(roof.asal, `_*Suit Results*_${tie ? '\nRESULTS' : ''}
 
-@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Menang \n` : ` Kalah \n`}
-@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Menang \n` : ` Kalah \n`}
+@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
+@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost \n`}
   `.trim(), m, { mentions: [roof.p, roof.p2] })
   delete this.suit[roof.id]
   }
@@ -420,17 +420,17 @@ klik https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] }
   if (!afkTime || afkTime < 0) continue
   let reason = user.afkReason || ''
   reply(`
-Jangan tag dia!
-Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
-Selama ${clockString(new Date - afkTime)}
+Don't tag him!
+He's AFK ${reason ? 'on the grounds that ' + reason : 'for no reason'}
+For ${clockString(new Date - afkTime)}
   `.trim())
   }
 
   if (db.data.users[m.sender].afkTime > -1) {
   let user = global.db.data.users[m.sender]
   reply(`
-Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
-Selama ${clockString(new Date - user.afkTime)}
+You quit AFK ${user.afkReason ? ' after ' + user.afkReason : ''}
+For ${clockString(new Date - user.afkTime)}
   `.trim())
   user.afkTime = -1
   user.afkReason = ''
@@ -443,43 +443,43 @@ Selama ${clockString(new Date - user.afkTime)}
   let user = global.db.data.users[m.sender]
   user.afkTime = + new Date
   user.afkReason = text
-  reply(`${m.pushName} Telah Afk${text ? ': ' + text : ''}`)
+  reply(`${m.pushName} Already Afk${text ? ': ' + text : ''}`)
   }
   break	
   // Absen
   case 'absen': {
   if (!m.isGroup) return reply(mess.group)
   if (!isGroupAdmins) return reply(mess.admin)
-  if (m.chat in absen) throw `_Masih ada absen di chat ini!_\n\n*${prefix}hapusabsen* - untuk menghapus absen`
-  if (!text) throw `Masukkan Alasan Melakukan absen, Example: *${prefix + command} Pagi Hari*`
-  m.reply(`absen dimulai!\n\n*${prefix}hadir* - untuk ya\n*${prefix}tidakhadir* - untuk tidak\n*${prefix}cekabsen* - untuk mengecek absen\n*${prefix}hapusabsen* - untuk menghapus absen`)
+  if (m.chat in absen) throw `_There are still absences in this chat!_\n\n*${prefix}hapusabsen* - to remove absences`
+  if (!text) throw `Enter the Reason for Absenteeism, Example: *${prefix + command} Morning*`
+  m.reply(`absences begin!\n\n*${prefix}hadir* - for yes\n*${prefix}tidakhadir* - not to\n*${prefix}cekabsen* - to check absences\n*${prefix}hapusabsen* - to remove absences`)
   absen[m.chat] = [q, [], []]
   await sleep(1000)
   hadir = absen[m.chat][1]
   tidakhadir = absen[m.chat][2]
   teks_absen = `*ABSEN IN THE DAY 🌤️*
 
-*Alasan :* ${absen[m.chat][0]}
+*Reason :* ${absen[m.chat][0]}
 
-┌〔 *Member Hadir* 〕
+┌〔 *Members Attend* 〕
 │ 
-├ *Hadir :* ${absen[m.chat][1].length}
+├ *Be present :* ${absen[m.chat][1].length}
 │
 │ 
 └────
 
-┌〔 *Member Tidak Hadir* 〕
+┌〔 *Member Not Present* 〕
 │ 
-├ *Tidak Hadir :* ${absen[m.chat][2].length}
+├ *Absent :* ${absen[m.chat][2].length}
 │
 │ 
 └────
 
-*${prefix}hapusabsen* - untuk menghapus absen`
-  let buttonsabsen = [{buttonId: `hadir`, buttonText: {displayText: 'HADIR 🏅'}, type: 1},{buttonId: `tidakhadir`, buttonText: {displayText: 'TIDAK HADIR 📝'}, type: 1}]
+*${prefix}hapusabsen* - to remove absences`
+  let buttonsabsen = [{buttonId: `hadir`, buttonText: {displayText: 'BE PRESENT 🏅'}, type: 1},{buttonId: `tidakhadir`, buttonText: {displayText: 'ABSENT 📝'}, type: 1}]
   let buttonMessageabsen = {
   text: teks_absen,
-  footer: 'Jika Button Tidak Muncul Ketik Hadir/Tidakhadir',
+  footer: 'If the Button Does Not Appear Type Present/Absent',
   buttons: buttonsabsen,
   headerType: 1
   }
@@ -488,35 +488,35 @@ Selama ${clockString(new Date - user.afkTime)}
   break
   case 'hadir': {
   if (!m.isGroup) return reply(mess.group)
-  if (!(m.chat in absen)) throw `_*Tidak ada absen digrup ini!*_\n\n*${prefix}absen* - untuk memulai absen`
+  if (!(m.chat in absen)) throw `_*No absences of this group!*_\n\n*${prefix}absen* - to start absences`
   isabsen = absen[m.chat][1].concat(absen[m.chat][2])
   wasabsen = isabsen.includes(m.sender)
-  if (wasabsen) throw 'Kamu Sudah absen'
+  if (wasabsen) throw 'You have been absent'
   absen[m.chat][1].push(m.sender)
   menabsen = absen[m.chat][1].concat(absen[m.chat][2])
   teks_absen = `*ABSEN IN THE DAY 🌤️*
 
-*Alasan :* ${absen[m.chat][0]}
+*Reason :* ${absen[m.chat][0]}
 
-┌〔 *Member Hadir* 〕
+┌〔 *Members Attend* 〕
 │ 
-├ *Hadir :* ${absen[m.chat][1].length}
+├ *Be present :* ${absen[m.chat][1].length}
 ${absen[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-┌〔 *Member Tidak Hadir* 〕
+┌〔 *Member Not Present* 〕
 │ 
-├ *Tidak Hadir :* ${absen[m.chat][2].length}
+├ *Absent :* ${absen[m.chat][2].length}
 ${absen[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-*${prefix}hapusabsen* - untuk menghapus absen`
-  let buttonshadir = [{buttonId: `hadir`, buttonText: {displayText: 'HADIR 🏅'}, type: 1},{buttonId: `tidakhadir`, buttonText: {displayText: 'TIDAK HADIR 📝'}, type: 1}]
+*${prefix}hapusabsen* - to remove absences`
+  let buttonshadir = [{buttonId: `hadir`, buttonText: {displayText: 'BE PRESENT 🏅'}, type: 1},{buttonId: `tidakhadir`, buttonText: {displayText: 'ABSENT 📝'}, type: 1}]
   let buttonMessagehadir = {
   text: teks_absen,
-  footer: 'Jika Button Tidak Muncul Ketik Hadir/Tidakhadir',
+  footer: 'If the Button Does Not Appear Type Present/Absent',
   buttons: buttonshadir,
   headerType: 1,
   mentions: menabsen
@@ -526,35 +526,35 @@ ${absen[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
   break
   case 'tidakhadir': {
   if (!m.isGroup) return reply(mess.group)
-  if (!(m.chat in absen)) throw `_*Tidak ada absen digrup ini!*_\n\n*${prefix}absen* - untuk memulai absen`
+  if (!(m.chat in absen)) throw `_*No absences of this group!*_\n\n*${prefix}absen* - to start absences`
   isabsen = absen[m.chat][1].concat(absen[m.chat][2])
   wasabsen = isabsen.includes(m.sender)
-  if (wasabsen) throw 'Kamu Sudah absen'
+  if (wasabsen) throw 'You have been absent'
   absen[m.chat][2].push(m.sender)
   menabsen = absen[m.chat][1].concat(absen[m.chat][2])
   teks_absen = `*ABSEN IN THE DAY 🌤️*
 
-*Alasan :* ${absen[m.chat][0]}
+*Reason :* ${absen[m.chat][0]}
 
-┌〔 *Member Hadir* 〕
+┌〔 *Members Attend* 〕
 │ 
-├ *Hadir :* ${absen[m.chat][1].length}
+├ *Be present :* ${absen[m.chat][1].length}
 ${absen[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-┌〔 *Member Tidak Hadir* 〕
+┌〔 *Member Not Present* 〕
 │ 
-├ *Tidak Hadir :* ${absen[m.chat][2].length}
+├ *Absent :* ${absen[m.chat][2].length}
 ${absen[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-*${prefix}hapusabsen* - untuk menghapus absen`
-  let buttonstidakhadir = [{buttonId: `hadir`, buttonText: {displayText: 'HADIR 🏅'}, type: 1},{buttonId: `tidakhadir`, buttonText: {displayText: 'TIDAK HADIR 📝'}, type: 1}]
+*${prefix}hapusabsen* - to remove absences`
+  let buttonstidakhadir = [{buttonId: `hadir`, buttonText: {displayText: 'BE PRESENT 🏅'}, type: 1},{buttonId: `tidakhadir`, buttonText: {displayText: 'ABSENT 📝'}, type: 1}]
   let buttonMessagetidakhadir = {
   text: teks_absen,
-  footer: 'Jika Button Tidak Muncul Ketik Hadir/Tidakhadir',
+  footer: 'If the Button Does Not Appear Type Present/Absent',
   buttons: buttonstidakhadir,
   headerType: 1,
   mentions: menabsen
@@ -564,26 +564,26 @@ ${absen[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
   break
   case 'cekabsen':
   if (!m.isGroup) return reply(mess.group)
-  if (!(m.chat in absen)) throw `_*Tidak ada absen digrup ini!*_\n\n*${prefix}absen* - untuk memulai absen`
+  if (!(m.chat in absen)) throw `_*No absences of this group!*_\n\n*${prefix}absen* - to start absences`
   teks_absen = `*ABSEN IN THE DAY 🌤️*
 
-*Alasan :* ${absen[m.chat][0]}
+*Reason :* ${absen[m.chat][0]}
 
-┌〔 *Member Hadir* 〕
+┌〔 *Members Attend* 〕
 │ 
 ├ Total: ${hadir.length}
 ${absen[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-┌〔 *Member Tidak Hadir* 〕
+┌〔 *Member Not Present* 〕
 │ 
 ├ Total: ${tidakhadir.length}
 ${absen[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-*${prefix}hapusabsen* - untuk menghapus absen
+*${prefix}hapusabsen* - to remove absences
 
 
 © ${ownername}
@@ -593,18 +593,18 @@ ${absen[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
   case 'deleteabsen': case'delabsen': case 'hapusabsen': {
   if (!m.isGroup) return reply(mess.group)
   if (!isGroupAdmins) return reply(mess.admin)
-  if (!(m.chat in absen)) throw `_*Tidak ada absen digrup ini!*_\n\n*${prefix}absen* - untuk memulai absen`
+  if (!(m.chat in absen)) throw `_*No absences of this group!*_\n\n*${prefix}absen* - to start absences`
   delete absen[m.chat]
-  m.reply('Berhasil Menghapus Sesi absen Di Grup Ini')
+  m.reply('Successfully Deleted An Absent Session In This Group')
   }
   break
   case 'ttc': case 'ttt': case 'tictactoe': {
   let TicTacToe = require("./lib/tictactoe")
   this.game = this.game ? this.game : {}
-  if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
+  if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game.'
   let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
   if (room) {
-  reply('Partner ditemukan!')
+  reply('Partner found!')
   room.o = m.chat
   room.game.playerO = m.sender
   room.state = 'PLAYING'
@@ -629,9 +629,9 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-Menunggu @${room.game.currentTurn.split('@')[0]}
+Wait @${room.game.currentTurn.split('@')[0]}
 
-Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
+Type *skip* to surrender and admit defeat`
   if (room.x !== room.o) await chika.sendText(room.x, str, m, { mentions: parseMention(str) } )
   await chika.sendText(room.o, str, m, { mentions: parseMention(str) } )
   } else {
@@ -643,7 +643,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
   state: 'WAITING'
   }
   if (text) room.name = text
-  reply('Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''))
+  reply('Waiting for a partner' + (text ? ` typing the command below ${prefix}${command} ${text}` : ''))
   this.game[room.id] = room
   }
   }
@@ -653,9 +653,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
   try {
   if (this.game) {
   delete this.game
-  chika.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
+  chika.sendText(m.chat, `Successfully delete session TicTacToe`, m)
   } else if (!this.game) {
-  reply(`Session TicTacToe🎮 tidak ada`)
+  reply(`Session TicTacToe🎮 do not`)
   } else throw '?'
   } catch (e) {
   reply(lang.fiturError())
@@ -667,16 +667,16 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
   let poin = 10
   let poin_lose = 10
   let timeout = 60000
-  if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) reply(`Selesaikan suit mu yang sebelumnya`)
-  if (m.mentionedJid[0] === m.sender) return reply(`Tidak bisa bermain dengan diri sendiri !`)
-  if (!m.mentionedJid[0]) return reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nContoh : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
-  if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) throw `Orang yang kamu tantang sedang bermain suit bersama orang lain :(`
+  if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) reply(`Complete your previous suit`)
+  if (m.mentionedJid[0] === m.sender) return reply(`Can't !`)
+  if (!m.mentionedJid[0]) return reply(`_Who do you want to challenge?_\nTag the person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
+  if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) throw `The person you challenged is playing a suit with someone else :(`
   let id = 'suit_' + new Date() * 1
   let caption = `_*SUIT PvP*_
 
-@${m.sender.split`@`[0]} menantang @${m.mentionedJid[0].split`@`[0]} untuk bermain suit
+@${m.sender.split`@`[0]} Challenging @${m.mentionedJid[0].split`@`[0]} to play suit
 
-Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
+Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   this.suit[id] = {
   chat: await chika.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
   id: id,
@@ -684,7 +684,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
   p2: m.mentionedJid[0],
   status: 'wait',
   waktu: setTimeout(() => {
-  if (this.suit[id]) chika.sendText(m.chat, `_Waktu suit habis_`, m)
+  if (this.suit[id]) chika.sendText(m.chat, `_Suit time is up_`, m)
   delete this.suit[id]
   }, 60000), poin, poin_lose, timeout
   }
@@ -711,33 +711,33 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
   }
   break
   case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh': {
-  if (!q) return reply(`Kirim/reply text dengan caption ${prefix + command}`)
+  if (!q) return reply(`Send/reply text with caption ${prefix + command}`)
   ter = command[1].toLowerCase()
   tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
   reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
   }
   break
-  case 'tebak': {
-  if (!q) return reply(`Example : ${prefix + command} lagu\n\nOption : \n1. lagu\n2. gambar\n3. kata\n4. kalimat\n5. lirik\n6.lontong`)
-  if (args[0] === "lagu") {
-  if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+  case 'guess': {
+  if (!q) return reply(`Example : ${prefix + command} song\n\nOption : \n1. song\n2. picture\n3. Words\n4. sentence\n5. lyrics\n6.lontong`)
+  if (args[0] === "song") {
+  if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) throw "There Are Still Sessions That Have Not Been Completed!"
   let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
   let result = anu[Math.floor(Math.random() * anu.length)]
   let msg = await chika.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
-  chika.sendText(m.chat, `Lagu Tersebut Adalah Lagu dari?\n\nArtist : ${result.artist}\nWaktu : 60s`, msg).then(() => {
+  chika.sendText(m.chat, `The Song Is a Song from?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
   tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
   })
   await sleep(60000)
   if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
-  console.log("Jawaban: " + result.jawaban)
-  chika.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, ownername, m)
+  console.log("Answer: " + result.jawaban)
+  chika.sendButtonText(m.chat, [{ buttonId: 'guess the song', buttonText: { displayText: 'Guess the Song' }, type: 1 }], `Time Out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, ownername, m)
   delete tebaklagu[m.sender.split('@')[0]]
   }
-  } else if (args[0] === 'gambar') {
-  if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
+  } else if (args[0] === 'picture') {
+  if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw "There Are Still Sessions That Have Not Been Completed!"
   let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
   let result = anu[Math.floor(Math.random() * anu.length)]
-  chika.sendImage(m.chat, result.img, `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : 60s`, m).then(() => {
+  chika.sendImage(m.chat, result.img, `Please Answer The Above Questions\n\nDescription : ${result.deskripsi}\nTime : 60s`, m).then(() => {
   tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
   })
   await sleep(60000)
