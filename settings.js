@@ -31,7 +31,7 @@
   // Set Kebutuhan Button & Kontak
   //ubah aja kalau ada yang gapunya gsh di hps anggap aja credits :), note tanda ' gausah di hapus!
   global.youtube = 'https://youtube.com/channel/UCrCnLKYk-hVzn74DstKjbeQ'
-  global.mygc = 'https://chat.whatsapp.com/CRY23lVKmXB7sCMhHmcwVw'
+  global.mygc = 'https://chat.whatsapp.com/GBLJJNdsabGA7lms6NZY3R'
   global.myweb = 'https://instagram.com/tdm._.sam'
   global.region = 'Morocco'
 
