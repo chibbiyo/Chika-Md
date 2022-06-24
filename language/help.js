@@ -610,9 +610,9 @@ If you find some kind of bug or mistake, please understand it first, report the 
   return `
 *DONATE*
 
-Hai kak ☺️ 
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi
-Berapapun donasi kalian akan sangat berarti 👍
+Hi dear ☺️ 
+You can support me to keep this bot up to date by donating
+Any amount of your donation will mean a lot 👍
 
 Thanks!
 
@@ -1283,5 +1283,6 @@ wa.me/${ownernomer}
   ✎ Yoga
   ✎ Deff
   ✎ Riy
+  ✎ Sam
   `
   }
