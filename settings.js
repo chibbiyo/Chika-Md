@@ -67,14 +67,14 @@
   //terserah mau ubah apa nggak, note : tanda ' gausah di hapus!
   global.mess = {
   success: '_Done._',
-  admin: 'Special _Fitur For Group Admins!_',
-  botAdmin: '_Bot Harus Menjadi Admin Terlebih Dahulu!_',
-  owner: '_Fitur Khusus Owner Bot_',
-  group: '_Fitur Digunakan Hanya Untuk Group!_',
-  private: '_Fitur Digunakan Hanya Untuk Private Chat!_',
-  bot: '_Fitur Khusus Pengguna Nomor Bot_',
-  wait: '_Sedang Di Proses..._',
-  error: '_Fitur Sedang Error!_',
+  admin: '_Special Features of Group Admin!_',
+  botAdmin: '_Bots Must Be Admins First!_',
+  owner: '_Special Features of Owner Bot_',
+  group: '_Features Used For Groups Only!_',
+  private: '_Features Used Only For Private Chat!_',
+  bot: '_Special Features of User Number Bot_',
+  wait: '_In Progress..._',
+  error: '_Medium Error Feature!_',
   }
 
   // Batas Akhir
