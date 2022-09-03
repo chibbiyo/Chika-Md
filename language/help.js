@@ -7,20 +7,20 @@
 
 //—————「 Menu 」—————//
 exports.menu = (botname, pushname, salam) => {
-	return`Selamat ${salam} kak ${pushname}
+	return`Hey ${salam} user ${pushname}
 
-Saya ${botname}, Bot Ini Adalah Beta Multi-Device WhatsApp.
-Jika Kamu Menemukan Semacam Bug Atau Kesalahan Mohon Dimaklumi Dulu Ya, Lapor Owner Agar Segera Di Perbaiki🙏`
+I am ${botname}, This Bot Is WhatsApp Multi-Device Beta.
+If you find some kind of bug or error, please understand first, please report the owner so that it will be fixed immediately🙏`
 }
 
 //—————「 List 」—————//
 exports.list = (pushname) => {
-	return`Halo kak ${pushname}, silahkan dipilih list menu dibawah ini`
+	return`hello user ${pushname}, Please select the menu list below`
 }
 
 //—————「 All Menu 」—————//
 exports.allmenu = (prefix, pushname, botname, time, salam) => {
-return`  _Selamat ${salam} kak ${pushname}_
+return`  _Hello ${salam} user ${pushname}_
 
   *⏰ Time Server : ${time}*
   *📚 List Menu : ${botname}*
@@ -417,16 +417,15 @@ return`  _Selamat ${salam} kak ${pushname}_
   *≻* ${prefix}setmenu
   *≻* ${prefix}setallmenu
   
-  *THANKS TO*
-  *≻* DikaArdnt
-  *≻* ZeeoneOfc
-  *≻* FatihArridho
-  *≻* Yoga
-  *≻* Riy
-  *≻* Deff
-  *≻* Sanzy
-  *≻* Nekel
-  *≻* Bagas Prdn
+
+
+
+  
+
+
+
+
+
   `
 }
 
@@ -447,30 +446,30 @@ exports.donasi  = (ownernomer) => {
 	return`
 —————「 *DONATE* 」—————
 
-Hai kak ☺️ 
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi
-Berapapun donasi kalian akan sangat berarti 👍
+hllo user ☺️ 
+You can support me to keep this bot up to date by donating
+Any amount of your donation will mean a lot 👍
 
 Thanks!
 
 —————「 *SEWA | RUN BOT* 」—————
 
   *_SEWA BOT_* 
-  *≻* Sewa Bot 15k (1 minggu)
-  *≻* Sewa Bot 20k (1 bulan)
-  *≻* Sewa Bot 25k (Permanen)
+  *≻* 
+  *≻* 
+  *≻*
 
-  *JADI BOT* 
-  *≻* Jadi Bot 15k Tidak Owner (1 minggu)
-  *≻* Jadi Bot + Owner 20k (1 bulan)
-  *≻* Jadi Bot + Owner 25k (Permanen)
+  *JADI BOT*
+  *≻*
+  *≻* 
+  *≻* 
 
   *JASA RUN BOT*
-  *≻* Run Bot 15k (1 minggu)
-  *≻* Run Bot 20k (1 bulan)
-  *≻* Run Bot 25k (Permanen)
+  *≻* 
+  *≻* 
+  *≻* 
 
-  *Minat? Langsung chat aja ya cuy 🐦*
+  *.....*
 
   *Contact person Owner* :
   wa.me/${ownernomer}
